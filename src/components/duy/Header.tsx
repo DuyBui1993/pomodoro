@@ -1,11 +1,10 @@
 import * as React from 'react';
-import { HiOutlineCheckCircle } from 'react-icons/hi2';
 import { IconButton } from '@/components/duy/IconButton';
-import { MdDashboard } from 'react-icons/md';
 import { CiSettings } from 'react-icons/ci';
 import { MdOutlineAssignmentInd } from 'react-icons/md';
 import { FaCheckCircle } from 'react-icons/fa';
 import { BsThreeDotsVertical } from 'react-icons/bs';
+import { TbReportSearch } from 'react-icons/tb';
 
 export const Header = () => {
   return (
@@ -15,7 +14,7 @@ export const Header = () => {
         <span className="font-medium">Pomofocus</span>
       </div>
       <div className="actions flex space-x-2">
-        <IconButton icon={<MdDashboard fontSize={18} />} text="Report" />
+        <IconButton icon={<TbReportSearch fontSize={18} />} text="Report" />
         <IconButton icon={<CiSettings fontSize={18} />} text="Setting" />
         <IconButton icon={<MdOutlineAssignmentInd fontSize={18} />} text="Sign in" />
         <IconButton icon={<BsThreeDotsVertical fontSize={18} />} text="" />
