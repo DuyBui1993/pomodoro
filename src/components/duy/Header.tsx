@@ -13,7 +13,7 @@ export const Header = () => {
         <FaCheckCircle />
         <span className="font-medium">Pomofocus</span>
       </div>
-      <div className="actions flex gap-2">
+      <div className="actions flex space-x-2">
         <IconButton icon={<MdDashboard />} text="Report" />
         <IconButton icon={<CiSettings />} text="Setting" />
         <IconButton icon={<MdOutlineAssignmentInd />} text="Sign in" />

@@ -23,20 +23,21 @@ const TABS = [
 export const CountDown = () => {
   const [activeTab, setActiveTab] = React.useState(TABS[0].id);
   return (
-    <div className="mx-auto mt-4 flex max-w-[620px] justify-center gap-2">
-      {TABS.map((tabItem) => {
-        return (
-          <TabCountDown
-            onClick={() => {
-              setActiveTab(tabItem.id);
-            }}
-            active={activeTab === tabItem.id}
-            key={tabItem.id}
-            label={tabItem.label}
-            initialValue={tabItem.initialValue}
-          />
-        );
-      })}
+    <div className="mx-auto mt-4 max-w-[620px] px-20">
+      <div className="flex justify-center space-x-2 rounded-md bg-white bg-opacity-20 py-4">
+        {TABS.map((tabItem) => {
+          return (
+            <TabCountDown
+              onClick={() => {
+                setActiveTab(tabItem.id);
+              }}
+              active={activeTab === tabItem.id}
+              key={tabItem.id}
+              label={tabItem.label}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };
