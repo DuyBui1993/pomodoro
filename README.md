@@ -36,6 +36,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 ## Cẩu trúc folder cho 1 trang web
+
 - [đuường dẫn]
   - page.tsx // là nội dung trang web
   - layout.tsx
