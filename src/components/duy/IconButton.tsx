@@ -13,7 +13,7 @@ export const IconButton = ({ icon, text, onClick }: Props) => {
       className="flex cursor-pointer items-center space-x-1 rounded-md bg-white bg-opacity-20 px-2.5 py-1.5 text-sm"
     >
       <div>{icon}</div>
-      <div>{text}</div>
+      {text && <div>{text}</div>}
     </div>
   );
 };

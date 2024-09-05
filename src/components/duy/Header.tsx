@@ -5,6 +5,7 @@ import { MdDashboard } from 'react-icons/md';
 import { CiSettings } from 'react-icons/ci';
 import { MdOutlineAssignmentInd } from 'react-icons/md';
 import { FaCheckCircle } from 'react-icons/fa';
+import { BsThreeDotsVertical } from 'react-icons/bs';
 
 export const Header = () => {
   return (
@@ -14,9 +15,10 @@ export const Header = () => {
         <span className="font-medium">Pomofocus</span>
       </div>
       <div className="actions flex space-x-2">
-        <IconButton icon={<MdDashboard />} text="Report" />
-        <IconButton icon={<CiSettings />} text="Setting" />
-        <IconButton icon={<MdOutlineAssignmentInd />} text="Sign in" />
+        <IconButton icon={<MdDashboard fontSize={18} />} text="Report" />
+        <IconButton icon={<CiSettings fontSize={18} />} text="Setting" />
+        <IconButton icon={<MdOutlineAssignmentInd fontSize={18} />} text="Sign in" />
+        <IconButton icon={<BsThreeDotsVertical fontSize={18} />} text="" />
       </div>
     </div>
   );

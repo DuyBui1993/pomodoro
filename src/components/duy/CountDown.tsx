@@ -24,8 +24,8 @@ export const CountDown = () => {
   const [activeTab, setActiveTab] = React.useState(TABS[0].id);
   const currentActiveTabIndex = TABS.findIndex((tab) => tab.id === activeTab);
   return (
-    <div className="mx-auto mt-4 flex max-w-[620px] flex-col justify-center px-20">
-      <div className="rounded-md bg-white bg-opacity-20 py-4">
+    <div className="mx-auto mt-12 flex max-w-[620px] flex-col justify-center px-20">
+      <div className="rounded-md bg-white bg-opacity-10 py-8">
         <div className="flex justify-center space-x-2">
           {TABS.map((tabItem) => {
             return (
