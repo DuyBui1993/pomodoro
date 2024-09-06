@@ -1,9 +1,13 @@
 import * as React from 'react';
-
+import { Header } from '@/components/oanh/Header';
+import { CountDown } from '@/components/oanh/CountDown';
 const HomePage = () => {
   return (
     <div className="h-screen bg-[rgb(186,73,73)]">
-      <div className="mx-auto p-4"></div>
+      <div className="mx-auto p-4">
+        <Header />
+        <CountDown />
+      </div>
     </div>
   );
 };
