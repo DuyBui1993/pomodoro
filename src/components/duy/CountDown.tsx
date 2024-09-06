@@ -32,7 +32,6 @@ const convertSecondsToTime = (seconds: number) => {
 export const CountDown = () => {
   const [activeTab, setActiveTab] = React.useState(TABS[0].id);
   const currentActiveTabIndex = TABS.findIndex((tab) => tab.id === activeTab);
-
   const [currentTime, setCurrentTime] = React.useState(TABS[currentActiveTabIndex].value);
 
   return (
