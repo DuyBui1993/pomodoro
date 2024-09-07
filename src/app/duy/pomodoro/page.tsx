@@ -13,10 +13,12 @@ const HomePage = () => {
       <div className="h-screen bg-[rgb(186,73,73)]">
         <div className="mx-auto max-w-[620px] p-4">
           <Header />
-          <CountDown />
-          <CurrentTask />
-          <TaskList />
-          <AddTaskAction />
+          <div className="px-16">
+            <CountDown />
+            <CurrentTask />
+            <TaskList />
+            <AddTaskAction />
+          </div>
         </div>
       </div>
 

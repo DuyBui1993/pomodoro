@@ -35,7 +35,7 @@ export const CountDown = () => {
   const [currentTime, setCurrentTime] = React.useState(TABS[currentActiveTabIndex].value);
 
   return (
-    <div className="mx-auto mt-12 flex flex-col justify-center px-20">
+    <div className="mx-auto mt-12 flex flex-col justify-center">
       <div className="rounded-md bg-white bg-opacity-10 py-8">
         <div className="flex justify-center space-x-2">
           {TABS.map((tabItem) => {

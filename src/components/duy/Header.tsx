@@ -8,10 +8,10 @@ import { TbReportSearch } from 'react-icons/tb';
 
 export const Header = () => {
   return (
-    <div className="mx-auto flex items-center justify-between border-b border-b-gray-100 border-opacity-80 p-2">
+    <div className="mx-auto flex items-center justify-between border-b border-b-gray-800 border-opacity-10 pb-4">
       <div className="logo flex items-center space-x-1 text-lg">
         <FaCheckCircle />
-        <span className="font-medium">Pomofocus</span>
+        <span className="font-extrabold">Pomofocus</span>
       </div>
       <div className="actions flex space-x-2">
         <IconButton icon={<TbReportSearch fontSize={18} />} text="Report" />
