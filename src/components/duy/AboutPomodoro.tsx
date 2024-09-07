@@ -3,7 +3,7 @@ import { TitleWithUnderline } from '@/components/duy/TitleWithUnderline';
 
 const Link = ({ href, children }) => {
   return (
-    <a className="text-red-500 underline" href={href}>
+    <a className="text-orange-600 underline" href={href}>
       {children}
     </a>
   );
@@ -40,43 +40,62 @@ export const AboutPomodoro = () => {
             <b>Add tasks</b> to work on today
           </li>
           <li>
-            Set estimate pomodoros (1 = 25min of work) for each tasks Select a task to work on Start
+            <b>Set estimate pomodoros</b> (1 = 25min of work) for each tasks
           </li>
           <li>
-            timer and focus on the task for 25 minutes Take a break for 5 minutes when the alarm
-            ring
+            <b>Select a task</b> to work on
           </li>
-          <li>Iterate 3-5 until you finish the tasks</li>
+          <li>
+            <b>Start timer</b> and focus on the task for 25 minutes
+          </li>
+          <li>
+            <b>Take a break</b> for 5 minutes when the alarm ring
+          </li>
+          <li>
+            <b>Iterate 3-5</b> until you finish the tasks
+          </li>
         </ol>
 
         <TitleWithUnderline text="Basic Features" />
         <ul className="list-disc space-y-3 pl-8">
           <li>
-            <b>Add tasks</b> to work on today
+            <b>Estimate Finish Time:</b> Get an estimate of the time required to complete your daily
+            tasks.
           </li>
           <li>
-            Set estimate pomodoros (1 = 25min of work) for each tasks Select a task to work on Start
+            <b>Add Templates:</b> Save your repetitive tasks as templates and add them with just one
+            click.
           </li>
           <li>
-            timer and focus on the task for 25 minutes Take a break for 5 minutes when the alarm
-            ring
+            <b>Visual Reports:</b> See how much time you've focused each day, week, and month.
           </li>
-          <li>Iterate 3-5 until you finish the tasks</li>
+          <li>
+            <b>Custom Settings:</b> Personalize your focus/break time, alarm sounds, background
+            sounds, and more.
+          </li>
         </ul>
 
         <TitleWithUnderline text="Premium Features" />
         <ul className="list-disc space-y-3 pl-8">
           <li>
-            <b>Add tasks</b> to work on today
+            <b>Add Projects:</b> Track how much time you spend on each project.
           </li>
           <li>
-            Set estimate pomodoros (1 = 25min of work) for each tasks Select a task to work on Start
+            <b>Yearly Reports:</b> View your focus hours for each year.
           </li>
           <li>
-            timer and focus on the task for 25 minutes Take a break for 5 minutes when the alarm
-            ring
+            <b>Download Reports:</b> Download your focus history in CSV format.
           </li>
-          <li>Iterate 3-5 until you finish the tasks</li>
+          <li>
+            <b>No Template Limit:</b> Save more than 3 templates.
+          </li>
+          <li>
+            <b>Todoist Integration:</b> Load tasks from your Todoist account.
+          </li>
+          <li>
+            <b>Webhook Integration:</b> Connect to other apps (Zapier, IFTTT, etc). No Ads: Enjoy a
+            clean and distraction-free app experience.
+          </li>
         </ul>
         <TitleWithUnderline text="Download App" />
         <ul className="list-disc space-y-3 pl-8">
