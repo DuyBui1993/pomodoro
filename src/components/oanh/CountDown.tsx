@@ -32,6 +32,16 @@ export const CountDown = () => {
   const [activeTab, setActiveTab] = React.useState(TABS[0].id);
   const activeItem = TABS.findIndex((tab) => tab.id === activeTab);
   const [currentTime, setCurrentTime] = React.useState(TABS[activeItem].value);
+  const [state, setState] = React.useState('PAUSE');
+
+  React.useEffect(() => {
+    const intervalHolder = setInterval(() => {
+      if (state === 'RUNNING' && currentTime > 0) {
+        setCurrentTime((prevTime) => prevTime - 1);
+      }
+    }, 1000);
+    return () => clearInterval(intervalHolder);
+  }, [state, currentTime]);
 
   return (
     <div>
@@ -42,6 +52,7 @@ export const CountDown = () => {
               onClick={() => {
                 setActiveTab(tabItem.id);
                 setCurrentTime(tabItem.value);
+                setState('PAUSE');
               }}
               active={activeTab === tabItem.id}
               key={tabItem.id}
@@ -56,11 +67,11 @@ export const CountDown = () => {
         <div className="flex items-center justify-center">
           <button
             onClick={() => {
-              setCurrentTime(currentTime - 1);
+              setState(state === 'RUNNING' ? 'PAUSE' : 'RUNNING');
             }}
             className="bordered mt-2 rounded-md border-2 bg-white p-4 px-12 py-3 text-2xl font-medium text-red-800 drop-shadow"
           >
-            START
+            {state === 'RUNNING' ? 'PAUSE' : 'START'}
           </button>
         </div>
       </div>
