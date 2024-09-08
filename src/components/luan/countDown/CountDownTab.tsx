@@ -31,7 +31,7 @@ const CountDownTab = () => {
 
   return (
     <div>
-      <div className="mx-auto mt-8 h-80 w-1/3 max-w-[620px] justify-center rounded-[8px] bg-white bg-opacity-10">
+      <div className="mx-auto mt-8 justify-center rounded-[8px] bg-white bg-opacity-10">
         <div className="mx-auto mt-6 flex justify-center gap-4 p-2 text-xl text-white">
           {TABS.map((tabItem) => (
             <CountDownTabContent
@@ -56,7 +56,7 @@ const CountDownTab = () => {
             onClick={() => {
               setCurrentTime(currentTime - 1);
             }}
-            className="rounded bg-white p-4 font-bold text-red-700"
+            className="mb-4 rounded bg-white p-4 font-bold text-red-700"
           >
             START
           </button>
