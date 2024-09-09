@@ -4,19 +4,19 @@ import { TabCountDown } from '@/components/duy/TabCountDown';
 
 const TABS = [
   {
-    id: 1,
+    id: 'pomodoro',
     label: 'Pomodoro',
     initialValue: '25:00',
     value: 25 * 60,
   },
   {
-    id: 2,
+    id: 'short-break',
     label: 'Short Break',
     initialValue: '05:00',
     value: 5 * 60,
   },
   {
-    id: 3,
+    id: 'long-break',
     label: 'Long Break',
     initialValue: '15:00',
     value: 15 * 60,
@@ -29,8 +29,7 @@ const convertSecondsToTime = (seconds: number) => {
   return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
 };
 
-export const CountDown = () => {
-  const [activeTab, setActiveTab] = React.useState(TABS[0].id);
+export const CountDown = ({ activeTab, onChangeActiveTab }) => {
   const currentActiveTabIndex = TABS.findIndex((tab) => tab.id === activeTab);
   const [currentTime, setCurrentTime] = React.useState(TABS[currentActiveTabIndex].value);
   const [state, setState] = React.useState('PAUSE');
@@ -52,7 +51,7 @@ export const CountDown = () => {
             return (
               <TabCountDown
                 onClick={() => {
-                  setActiveTab(tabItem.id);
+                  onChangeActiveTab(tabItem.id);
                   setCurrentTime(tabItem.value);
                 }}
                 active={activeTab === tabItem.id}
