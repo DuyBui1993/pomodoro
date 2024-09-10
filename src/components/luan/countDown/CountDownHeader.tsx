@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { HiOutlineDocumentReport, HiOutlineDotsVertical } from 'react-icons/hi';
-import { IconButton } from '@/components/duy/IconButton';
 import { CiSettings } from 'react-icons/ci';
 import { FaRegCircleCheck, FaRegCircleUser } from 'react-icons/fa6';
+import { CountDownIconButton } from '@/components/luan/countDown/CountDownIconButton';
 
 export const Header = () => {
   return (
@@ -12,10 +12,10 @@ export const Header = () => {
         <span className="font-medium">Pomofocus</span>
       </div>
       <div className="actions flex space-x-2">
-        <IconButton icon={<HiOutlineDocumentReport fontSize={18} />} text="Report" />
-        <IconButton icon={<CiSettings fontSize={18} />} text="Setting" />
-        <IconButton icon={<FaRegCircleUser fontSize={18} />} text="Sign in" />
-        <IconButton icon={<HiOutlineDotsVertical fontSize={18} />} text="" />
+        <CountDownIconButton icon={<HiOutlineDocumentReport fontSize={18} />} text="Report" />
+        <CountDownIconButton icon={<CiSettings fontSize={18} />} text="Setting" />
+        <CountDownIconButton icon={<FaRegCircleUser fontSize={18} />} text="Sign in" />
+        <CountDownIconButton icon={<HiOutlineDotsVertical fontSize={18} />} text="" />
       </div>
     </div>
   );

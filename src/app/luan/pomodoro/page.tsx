@@ -3,7 +3,7 @@ import { CountDown } from '@/components/luan/countDown/CountDount';
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="h-screen">
       <CountDown />
     </div>
   );

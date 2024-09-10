@@ -23,11 +23,14 @@ const TABS = [
   },
 ];
 
-const CountDownTab = () => {
+const CountDownTab = ({ indexTab }) => {
   const [activeTab, setActiveTab] = React.useState(TABS[0].id);
-
   const activeIndexTab = TABS.findIndex((item) => item.id === activeTab);
   const [currentTime, setCurrentTime] = React.useState(TABS[activeIndexTab].value);
+
+  const setActiveIndexTab = (index: number) => {
+    indexTab(index);
+  };
 
   return (
     <div>
@@ -38,6 +41,7 @@ const CountDownTab = () => {
               onClick={() => {
                 setActiveTab(tabItem.id);
                 setCurrentTime(tabItem.value);
+                setActiveIndexTab(tabItem.id - 1);
               }}
               active={activeTab === tabItem.id}
               key={tabItem.id}
