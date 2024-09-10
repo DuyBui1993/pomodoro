@@ -28,11 +28,15 @@ const convertSecondsToTime = (seconds: number) => {
   const remainingSeconds = seconds % 60;
   return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
 };
-export const CountDown = () => {
+
+export const CountDown = ({ indexTab }) => {
   const [activeTab, setActiveTab] = React.useState(TABS[0].id);
   const activeItem = TABS.findIndex((tab) => tab.id === activeTab);
   const [currentTime, setCurrentTime] = React.useState(TABS[activeItem].value);
   const [state, setState] = React.useState('PAUSE');
+  const setActiveIndexTab = (index: number) => {
+    indexTab(index);
+  };
 
   React.useEffect(() => {
     const intervalHolder = setInterval(() => {
@@ -53,6 +57,7 @@ export const CountDown = () => {
                 setActiveTab(tabItem.id);
                 setCurrentTime(tabItem.value);
                 setState('PAUSE');
+                setActiveIndexTab(tabItem.id - 1);
               }}
               active={activeTab === tabItem.id}
               key={tabItem.id}
