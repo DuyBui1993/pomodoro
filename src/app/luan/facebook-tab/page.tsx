@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { UiFaceBook } from '@/components/luan/test/UiFaceBook';
+import { UiFaceBook } from '@/components/luan/test/facebook-tab/UiFaceBook';
 
 const HomePage = () => {
   return (
-    <div className="h-screen bg-white">
+    <div className="h-screen bg-white text-black">
       <UiFaceBook />
     </div>
   );
