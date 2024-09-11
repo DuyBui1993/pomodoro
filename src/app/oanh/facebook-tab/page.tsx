@@ -4,7 +4,7 @@ import { FacebookTab } from '@/components/oanh/facebook/FacebookTab';
 
 const HomePage = () => {
   return (
-    <div className="h-screen bg-white">
+    <div className="h-screen bg-white text-black">
       <div className="mx-auto w-[640px] p-4">
         <Header />
         <FacebookTab />
