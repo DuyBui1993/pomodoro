@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Header } from '@/components/facebook-tab/Header';
-import { Tab } from '@/components/facebook-tab/Tab';
+import { Header } from '@/components/duong/facebook-tab/Header';
+import { Tab } from '@/components/duong/facebook-tab/Tab';
 
 export const HomePage = () => {
   return (
