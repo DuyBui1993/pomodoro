@@ -28,6 +28,17 @@ const CountDownTab = ({ indexTab }) => {
   const activeIndexTab = TABS.findIndex((item) => item.id === activeTab);
   const [currentTime, setCurrentTime] = React.useState(TABS[activeIndexTab].value);
 
+  const [state, setState] = React.useState('PAUSE');
+
+  React.useEffect(() => {
+    const intervalHolder = setInterval(() => {
+      if (state === 'RUNNING' && currentTime > 0) {
+        setCurrentTime((prevTime) => prevTime - 1);
+      }
+    }, 1000);
+    return () => clearInterval(intervalHolder);
+  }, [state, currentTime]);
+
   const setActiveIndexTab = (index: number) => {
     indexTab(index);
   };
@@ -42,6 +53,7 @@ const CountDownTab = ({ indexTab }) => {
                 setActiveTab(tabItem.id);
                 setCurrentTime(tabItem.value);
                 setActiveIndexTab(tabItem.id - 1);
+                setState('PAUSE');
               }}
               active={activeTab === tabItem.id}
               key={tabItem.id}
@@ -58,11 +70,11 @@ const CountDownTab = ({ indexTab }) => {
         <div className="mx-auto mt-5 flex justify-center p-2 text-xl">
           <button
             onClick={() => {
-              setCurrentTime(currentTime - 1);
+              setState(state === 'RUNNING' ? 'PAUSE' : 'RUNNING');
             }}
             className="mb-4 rounded bg-white p-4 font-bold text-red-700"
           >
-            START
+            {state === 'PAUSE' ? 'START' : 'PAUSE'}
           </button>
         </div>
       </div>
