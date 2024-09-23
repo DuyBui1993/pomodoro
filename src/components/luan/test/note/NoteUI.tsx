@@ -22,16 +22,21 @@ const tabNote = [
   },
 ];
 
-//     < button
-// className = "rounded-3xl bg-white px-6 py-1.5 text-black" > All < /button>
-// <button className="rounded-3xl border-[2px] px-4 py-1.5 text-white">Personal</button>
-// <button className="rounded-3xl border-[2px] px-4 py-1.5 text-white">Office</button>
-
 export const NoteUI = () => {
   const [showForm, setShowForm] = React.useState<'ADD' | 'EDIT' | 'CLOSE'>('CLOSE');
   type NoteType = 'ADD' | 'EDIT' | 'DELETE';
-  const [note, setNote] = React.useState<Note[]>([]);
+  const [note, setNote] = React.useState<Note[]>(() => {
+    const savedNotes = localStorage.getItem('note');
+    return savedNotes ? JSON.parse(savedNotes) : [];
+  });
   const [currentNote, setCurrentNote] = React.useState<Note | null>(null);
+
+  const [indexTab, setIndexTab] = React.useState(0);
+  const [search, setSearch] = React.useState('');
+
+  React.useEffect(() => {
+    localStorage.setItem('note', JSON.stringify(note));
+  }, [note]);
 
   const actionNote = (noteItem: Note, type: NoteType) => {
     switch (type) {
@@ -60,8 +65,11 @@ export const NoteUI = () => {
     setShowForm('CLOSE');
   };
 
-  //tab
-  const [indexTab, setIndexTab] = React.useState(0);
+  const filteredNotes = note.filter((note) => {
+    const matchesSearch = note.title.toLowerCase().includes(search.toLowerCase());
+    const matchesTab = indexTab === 0 || note.selected === tabNote[indexTab].tabName;
+    return matchesSearch && matchesTab;
+  });
 
   return (
     <div className={`mx-auto flex h-[862px] w-[1044px] items-center justify-center bg-[#DFB8DD]`}>
@@ -73,6 +81,8 @@ export const NoteUI = () => {
               placeholder="Search notes ?"
               type="text"
               className="w-full rounded-3xl py-3 pl-10 text-sm italic text-black outline-none"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
             />
             <span className="absolute left-4 top-1/2 -translate-y-1/2 transform text-lg text-gray-600">
               <IoIosSearch />
@@ -93,7 +103,7 @@ export const NoteUI = () => {
           <div className={`my-4`}>
             note content.
             <div className={`space-y-4`}>
-              {note.map((value, index) => (
+              {filteredNotes.map((value, index) => (
                 <NoteItem key={index} note={value} handleNote={actionNote} />
               ))}
             </div>
