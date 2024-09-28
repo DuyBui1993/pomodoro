@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { FaCircleCheck } from 'react-icons/fa6';
-import { IconButton } from '@/components/duong/IconButton';
+import { IconButton } from '@/components/duong/pomodoro/IconButton';
 import { HiOutlineDocumentReport } from 'react-icons/hi';
 import { IoSettings } from 'react-icons/io5';
 import { MdAccountCircle } from 'react-icons/md';

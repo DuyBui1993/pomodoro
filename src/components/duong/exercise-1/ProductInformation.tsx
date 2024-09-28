@@ -1,5 +1,5 @@
 import * as React from 'react';
-import productImage from '../product-img.png';
+import productImage from './product-img.png';
 
 export const ProductInformation = () => {
   return (
