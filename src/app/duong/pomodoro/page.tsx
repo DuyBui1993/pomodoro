@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { Header } from '@/components/duong/Header';
-import { CountDown } from '@/components/duong/CountDown';
-import { CurrentTask } from '@/components/duong/CurrentTask';
-import { TaskList } from '@/components/duong/TaskList';
-import { AddTask } from '@/components/duong/AddTask';
-import { IntroPomodoro } from '@/components/duong/IntroPomodoro';
-import { Footer } from '@/components/duong/Footer';
+import { Header } from '@/components/duong/pomodoro/Header';
+import { CountDown } from '@/components/duong/pomodoro/CountDown';
+import { CurrentTask } from '@/components/duong/pomodoro/CurrentTask';
+import { TaskList } from '@/components/duong/pomodoro/TaskList';
+import { AddTask } from '@/components/duong/pomodoro/AddTask';
+import { IntroPomodoro } from '@/components/duong/pomodoro/IntroPomodoro';
+import { Footer } from '@/components/duong/pomodoro/Footer';
 
 const HomePage = () => {
   return (

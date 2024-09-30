@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { TabCountDown } from '@/components/duong/TabCountDown';
+import { TabCountDown } from '@/components/duong/pomodoro/TabCountDown';
 
 const TABS = [
   {

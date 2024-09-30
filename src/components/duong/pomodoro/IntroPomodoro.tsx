@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { UnderlineTitle } from '@/components/duong/UnderlineTitle';
+import { UnderlineTitle } from '@/components/duong/pomodoro/UnderlineTitle';
 
 const Link = ({ href, children }) => {
   return (
